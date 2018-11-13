@@ -4,3 +4,4 @@
 * *Здесь пока что ничего нет, поэтому здесь есть котик :scream_cat:*
 * **Он не может делать дз, у него лапки. :cat:**
 ![alt text](http://edinstvennaya.ua/pictures/article/9315_max.jpg "Logo Title Text 1")
+Это ссылка на оригинал котика: http://edinstvennaya.ua/pictures/article/9315_max.jpg
