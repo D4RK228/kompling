@@ -1,8 +1,34 @@
 # KompLing
 ## KompLing and nothing else
 * Это репризиторий для дз :octocat:
-* **Это котик, и он очень рад, потому что в файле есть дз :cat:**
-![Image alt](https://yandex.ru/images/search?pos=14&img_url=https%3A%2F%2Fcs9.pikabu.ru%2Fpost_img%2F2017%2F01%2F12%2F4%2Fog_og_14841952502668453.jpg)
+* **Котик ушел грустить в другой место, теперь здесь только дз**
+import pymorphy2
 
 
+  text = "Не стоит бояться перемен, чаще всего они случаются в тот момент, когда они необходимы"
+
+  text_split = text.split(" ")
+
+
+
+  morph = pymorphy2.MorphAnalyzer()
+  for a in text_split:
+
+    parse = morph.parse(a)[0] #метод morph.analyzer возвращает все разборы, с [0] главное
+
+    result = parse.normalized #нормальная форма, не работает без [0] выше
+
+    sklon = parse.inflect({"gent"})
+
+    lex = parse.lexeme
+
+    print("Простой разбор", parse)
+
+    print("Нормализовано: ", result)
+
+    print("Склонение в родительном: ", sklon)
+
+    print("Лексемы: ", lex)
+
+    print("#################")
 Это ссылка на оригинал котика: http://edinstvennaya.ua/pictures/article/9315_max.jpg
