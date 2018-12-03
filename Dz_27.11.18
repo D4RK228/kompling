@@ -56,7 +56,7 @@ print(text)
 
 print("Количество слов: ", len(words_amount))
 
-print("Количество стоп-слов: ", len(words_amount) - len(stop_text), "\nИх процент в тексте: ", (len(words_amount) - len(stop_text)) / len(words_amount) * 100)
+print("Количество стоп-слов: ", len(words_amount) - len(stop_text), "\nПроцент содеражиня в тексте: ", (len(words_amount) - len(stop_text)) / len(words_amount) * 100)
 
 stemmer = SnowballStemmer("russian")
 
