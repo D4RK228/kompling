@@ -6,9 +6,9 @@ from nltk.tokenize import word_tokenize
 from nltk.tokenize import string_span_tokenize as span
 from nltk.tokenize import sent_tokenize
 
-textt = open('text_for_test.txt', 'r')
+file = open('text_for_test.txt', 'r')
 text = ""
-for line in textt:
+for line in file:
     text += line
 tokens = word_tokenize(text)
 k = 0
@@ -26,7 +26,7 @@ for i in sent:
         if len(j) == s:
             print("Самое длинное слово в " + m + " предложении")
 
-text1 = span(text)
+text1 = span(text, "")
 n = 1
 k = 0
 while n < len(text1):
