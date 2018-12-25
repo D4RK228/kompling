@@ -1,0 +1,37 @@
+import nltk
+
+nltk.download('punkt')
+
+from nltk.tokenize import word_tokenize
+from nltk.tokenize import string_span_tokenize as span
+from nltk.tokenize import sent_tokenize
+
+textt = open('text_for_test.txt', 'r')
+text = ""
+for line in textt:
+    text += line
+tokens = word_tokenize(text)
+k = 0
+s = 0
+for i in tokens:
+    k = len(i)
+    if k > s:
+        s = k
+m = 0
+sent = sent_tokenize(text)
+for i in sent:
+    m += 1
+    temp = word_tokenize(i)
+    for j in temp:
+        if len(j) == s:
+            print("Самое длинное слово в " + m + " предложении")
+
+text1 = span(text)
+n = 1
+k = 0
+while n < len(text1):
+    if (text1[n] == ',' or text1[n] == '.') and text1[n-1] != ' ':
+        k += 1
+k = len(text1) - k
+k = (len(text1) / k) * 100
+print("Процент слов, не оканчивающихся знаком препинания: " + k)
