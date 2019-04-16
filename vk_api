@@ -1,0 +1,20 @@
+import vk_api
+import time
+
+session = vk_api.VkApi(token = '21f55f8921f55f8921f55f8912219cf50b221f521f55f897d56370153bf6830d747e6d3')
+vk = session.get_api()
+
+offset = 0
+posts = ''
+c = 0
+post = 44008
+for i in range(0,999):
+    try:
+        data = vk.wall.getComments(owner_id =-29159544, post_id = post, count = 100, sort = 'asc')
+    except vk_api.exceptions.ApiError:
+        post = post + 0
+    post = post - 1
+    for j in data['items']:
+        print(c,".",j['text'])
+        c += 1
+    time.sleep(1)
