@@ -1,0 +1,50 @@
+import vk_api
+import time
+
+session = vk_api.VkApi(token = '21f55f8921f55f8921f55f8912219cf50b221f521f55f897d56370153bf6830d747e6d3')
+vk = session.get_api()
+
+offset = 0
+posts = ''
+c = 0
+
+foffice = open('foffice.txt', 'w')
+
+post = 44209
+for i in range(0,10):
+    try:
+        data = vk.wall.getComments(owner_id =-29159544, post_id = post, count = 100, sort = 'asc')
+        for j in data['items']:
+            foffice.write(j['text'] + '\n')
+            print(j['text'])
+            c += 1
+    except vk_api.exceptions.ApiError:
+        post = post + 0
+    post = post - 1
+    time.sleep(1)
+
+fscience = open('fscience.txt', 'w')
+
+post = 1128364
+for i in range(0,10):
+    try:
+        data = vk.wall.getComments(owner_id =-159146575, post_id = post, count = 100, sort = 'asc')
+        for j in data['items']:
+            print(j['text'])
+            c += 1
+    except vk_api.exceptions.ApiError:
+        post = post + 0
+    post = post - 1
+    time.sleep(1)
+
+bdateoffice = open('bdateoffice.txt', 'w')
+
+databirth = vk.groups.getMembers(group_id =29159544, offset = 0, fields = 'bdate')
+
+
+#for i in databirth:
+#    print(databirth['items'][1]['id'])
+for i in range(1,1000):
+    print(databirth['items'][i]['bdate'])
+
+fscience.close()
