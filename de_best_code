@@ -1,0 +1,33 @@
+'''python
+import math
+import os
+text = ""
+
+path = "OFC\\"
+
+folder = []
+for i in os.walk("OFC"):
+    folder.append(i)
+folder
+a = folder[0][2]
+
+for i in a:
+    file = open(path + i, "r", encoding = 'utf-8')
+    f = file.readlines()
+    text += str(f)
+
+data = text.split()
+n = input("Введите n: ")
+c = input("Введите c: ")
+f_n = data.count(n)
+f_c = data.count(c)
+f_n_c = 0
+for i in range(len(data)):
+    if data[i] == n:
+        if data[i-1] or data[i+1] == c:
+            f_n_c += 1
+t_score = (f_n_c - (f_n*f_c)/len(data))/int(math.sqrt(f_n_c))
+mi = math.log(2, (f_n_c*len(text))/ f_n*f_c)
+print("t-score = " + str(t_score))
+print("MI = " + str(mi))
+'''
