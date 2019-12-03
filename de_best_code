@@ -1,4 +1,4 @@
-'''python
+```python
 import math
 import os
 text = ""
@@ -30,4 +30,4 @@ t_score = (f_n_c - (f_n*f_c)/len(data))/int(math.sqrt(f_n_c))
 mi = math.log(2, (f_n_c*len(text))/ f_n*f_c)
 print("t-score = " + str(t_score))
 print("MI = " + str(mi))
-'''
+```
