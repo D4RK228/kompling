@@ -1,4 +1,4 @@
-```python
+
 from fuzzywuzzy import fuzz
 import pandas as pd
 
@@ -20,4 +20,3 @@ for i in database:
                 database[k] = n
 
 print(database)
-```
